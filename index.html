@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-one"></div>
+  <div class="bg-shape bg-two"></div>
+  <main class="app">
+    <header class="hero">
+      <h1>Json formatter</h1>
+      <p class="subtitle">Paste raw JSON and beautify it instantly with validation, minify, and quick-copy tools.</p>
+    </header>
+
+    <section class="panel">
+      <div class="toolbar">
+        <button id="beautifyBtn" class="btn btn-primary">Beautify</button>
+        <button id="minifyBtn" class="btn">Minify</button>
+        <button id="clearBtn" class="btn">Clear</button>
+        <button id="copyBtn" class="btn">Copy Output</button>
+        <label for="indentSize">Indent</label>
+        <select id="indentSize" class="select">
+          <option value="2">2 spaces</option>
+          <option value="4" selected>4 spaces</option>
+          <option value="8">8 spaces</option>
+        </select>
+      </div>
+
+      <div class="editor-grid">
+        <div class="editor-wrap">
+          <div class="editor-header">
+            <h2>Input JSON</h2>
+          </div>
+          <textarea id="inputJson" spellcheck="false" placeholder='{"name":"Alex","items":[1,2,3]}'></textarea>
+        </div>
+
+        <div class="editor-wrap">
+          <div class="editor-header">
+            <h2>Formatted Output</h2>
+          </div>
+          <textarea id="outputJson" spellcheck="false" readonly placeholder="Formatted JSON will appear here"></textarea>
+        </div>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
